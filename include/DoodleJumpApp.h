@@ -20,6 +20,7 @@ public:
     DoodleJumpApp();
     void draw() override;
     void update() override;
+    void keyDown(ci::app::KeyEvent event);
     
     const int kWindowSize = 900;
     const int kMargin = 100;

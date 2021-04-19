@@ -20,9 +20,9 @@ public:
     
     void Display();
     
-    void OnCollision();
-
-    void UpdateCharacter(std::vector<Platform> platforms);
+    void UpdateCharacter(const std::vector<Platform>& platforms);
+    
+    void ChangeHorizontalVel(float change);
 
 private:
     
@@ -34,7 +34,8 @@ private:
     const float kHeight = 70;
     const float kWidth = 50;   
     const double kJumpHeight = 17;
-    const double kAcceleration = -.4;
+    const float kAcceleration = -.4f;
+    const float kAirResistance = .2f;
 };    
 }  // namespace doodleJump
 #endif //FINAL_PROJECT_CHARACTER_H

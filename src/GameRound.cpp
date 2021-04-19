@@ -23,4 +23,12 @@ void GameRound::UpdateGame() {
     character_.UpdateCharacter(platforms_);
 }
 
+void GameRound::KeyInput(const std::string& event) {
+    if (event == "left") {
+        character_.ChangeHorizontalVel(-3);
+    } else if (event == "right") {
+        character_.ChangeHorizontalVel(3);
+    }
+}
+
 }  // namespace doodleJump

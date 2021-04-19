@@ -18,6 +18,8 @@ public:
     void Display();
     
     void UpdateGame();
+    
+    void KeyInput(const std::string& event);
 
 private:
     Character character_;
