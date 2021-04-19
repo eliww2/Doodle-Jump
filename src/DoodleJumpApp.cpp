@@ -11,11 +11,15 @@ doodleJump::DoodleJumpApp::DoodleJumpApp() {
 }
 
     void DoodleJumpApp::draw() {
-        AppBase::draw();
+        ci::Color background_color("white");
+        ci::gl::clear(background_color);
+        ci::gl::color(ci::Color("green"));
+        character_.Display();
+        update();
     }
 
     void DoodleJumpApp::update() {
-        AppBase::update();
+        character_.UpdateCharacter();
     }
 
 }

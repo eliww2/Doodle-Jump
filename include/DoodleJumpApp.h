@@ -8,18 +8,22 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
+#include "Character.h"
 
 namespace doodleJump {
  
 class DoodleJumpApp : public ci::app::App {
+    
 public:
     DoodleJumpApp();
     void draw() override;
     void update() override;
     
-    const int kWindowSize = 875;
+    const int kWindowSize = 900;
     const int kMargin = 100;
 
+private:
+    Character character_;
 };
     
 } //namespace doodleJump
