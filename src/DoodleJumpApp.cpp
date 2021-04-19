@@ -13,13 +13,11 @@ doodleJump::DoodleJumpApp::DoodleJumpApp() {
     void DoodleJumpApp::draw() {
         ci::Color background_color("white");
         ci::gl::clear(background_color);
-        ci::gl::color(ci::Color("green"));
-        character_.Display();
-        update();
+        current_game_.Display();
     }
 
     void DoodleJumpApp::update() {
-        character_.UpdateCharacter();
+        current_game_.UpdateGame();
     }
 
 }

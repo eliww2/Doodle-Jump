@@ -6,6 +6,7 @@
 #define FINAL_PROJECT_CHARACTER_H
 
 #include "cinder/gl/gl.h"
+#include "Platform.h"
 
 using glm::vec2;
 
@@ -21,20 +22,19 @@ public:
     
     void OnCollision();
 
-    void UpdateCharacter();
+    void UpdateCharacter(std::vector<Platform> platforms);
 
 private:
     
-    bool alive = true;
-
     float position_x_ = 450;
     float position_y_ = 300;
     vec2 velocity_ = vec2(0, 15);
+    ci::Rectf hit_box_;
     
     const float kHeight = 70;
     const float kWidth = 50;   
-    const double kJumpHeight = 13;
-    const double kAcceleration = -.2;
+    const double kJumpHeight = 17;
+    const double kAcceleration = -.4;
 };    
 }  // namespace doodleJump
 #endif //FINAL_PROJECT_CHARACTER_H

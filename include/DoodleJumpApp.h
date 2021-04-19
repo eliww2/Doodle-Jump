@@ -9,6 +9,8 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "Character.h"
+#include "Platform.h"
+#include "GameRound.h"
 
 namespace doodleJump {
  
@@ -23,7 +25,7 @@ public:
     const int kMargin = 100;
 
 private:
-    Character character_;
+    GameRound current_game_;
 };
     
 } //namespace doodleJump

@@ -49,7 +49,7 @@ get_filename_component(APP_PATH "${CMAKE_CURRENT_SOURCE_DIR}/" ABSOLUTE)
 
 include("${CINDER_PATH}/proj/cmake/modules/cinderMakeApp.cmake")
 
-list(APPEND SOURCE_FILES    src/DoodleJumpApp.cpp src/Character.cpp)
+list(APPEND SOURCE_FILES    src/DoodleJumpApp.cpp src/Character.cpp src/Platform.cpp src/GameRound.cpp)
 
 list(APPEND TEST_FILES )
 
