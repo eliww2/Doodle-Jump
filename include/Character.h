@@ -23,7 +23,7 @@ public:
     void UpdateCharacter(const std::vector<Platform>& platforms);
     
     void ChangeHorizontalVel(float change);
-
+    
 private:
     
     float position_x_ = 450;

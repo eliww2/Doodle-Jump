@@ -15,25 +15,30 @@ void Character::Display() {
 }
 
 void Character::UpdateCharacter(const std::vector<Platform>& platforms) {
-    position_y_ -= velocity_[1];
-    position_x_ += velocity_[0];
-    velocity_[1] = velocity_[1] + kAcceleration;
-    
+
+    // checks if the character is coming down on a platform and makes it bounce 
     if (velocity_[1] <= 0) {
         for (Platform current_platform : platforms) {
-            if (hit_box_.intersects(current_platform.platform_box_)) {
+            if (hit_box_.intersects(current_platform.platform_box_) && (position_y_ + kHeight) <= current_platform.bottom_position_) {
                 velocity_[1] = (float)kJumpHeight;
                 break;
             }
         }
     }
     
+    //Constant change in character based on velocity and acceleration
+    position_y_ -= velocity_[1];
+    position_x_ += velocity_[0];
+    velocity_[1] = velocity_[1] + kAcceleration;
+    
+    // slows down the x velocity to make it seem like there is air resistance
     if (velocity_[0] < 0) {
         velocity_[0] += kAirResistance;
     } else if (velocity_[0] != 0) {
         velocity_[0] -= kAirResistance;
     }
     
+    //For testing right now TODO: Remove
     if (position_y_ > 800) {
         velocity_[1] = (float)kJumpHeight;
     }

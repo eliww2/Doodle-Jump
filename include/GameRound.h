@@ -5,6 +5,9 @@
 #ifndef FINAL_PROJECT_GAMEROUND_H
 #define FINAL_PROJECT_GAMEROUND_H
 
+#include "cinder/app/App.h"
+#include "cinder/app/RendererGl.h"
+#include "cinder/gl/gl.h"
 #include "Character.h"
 #include "Platform.h"
 

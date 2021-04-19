@@ -17,10 +17,10 @@ class Platform {
 public:
     Platform();
     
-    void Display();
+    Platform(const float height);
     
-    vec2 getPosition() const;
-
+    void Display() const;
+    
     float left_position_;
     float top_position_;
     float bottom_position_;

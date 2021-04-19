@@ -2,7 +2,7 @@
 // Created by eliww on 4/18/2021.
 //
 
-#include "../include/DoodleJumpApp.h"
+#include "DoodleJumpApp.h"
 
 namespace doodleJump {
 
@@ -30,6 +30,5 @@ void DoodleJumpApp::keyDown(ci::app::KeyEvent event) {
             break;
     }
 }
-
 
 }
