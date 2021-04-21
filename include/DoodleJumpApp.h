@@ -13,19 +13,37 @@
 #include "GameRound.h"
 
 namespace doodleJump {
- 
+    
 class DoodleJumpApp : public ci::app::App {
     
 public:
+    /**
+     * Initializes the App
+     */
     DoodleJumpApp();
+    
+    /**
+     * Draws the objects on screen.
+     */
     void draw() override;
+    
+    /**
+     * Updates the game state and the games items. (DOES NOT UPDATE SCREEN).
+     */
     void update() override;
-    void keyDown(ci::app::KeyEvent event);
+    
+    /**
+     * Takes in keyboard input to make the game playable.
+     * @param event - The key pressed down in the game.
+     */
+    void keyDown(ci::app::KeyEvent event) override;
     
     const int kWindowSize = 900;
     const int kMargin = 100;
 
 private:
+    
+    // The round being played.
     GameRound current_game_;
 };
     

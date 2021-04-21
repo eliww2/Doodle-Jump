@@ -6,6 +6,7 @@
 
 namespace doodleJump {
     
+    
 Platform::Platform() {
     left_position_ = (float)(rand() % 720);
     top_position_ = (float)(rand() % 780);
