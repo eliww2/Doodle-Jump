@@ -45,6 +45,7 @@ private:
     
     // The round being played.
     GameRound current_game_;
+    int highscore_ = 0;
 };
     
 } //namespace doodleJump

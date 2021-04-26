@@ -49,9 +49,9 @@ public:
     ci::Rectf platform_box_;
     
 private:
-    const float kHeight = 20;
-    const float kLength = 80;
-    const int kWindowSize = 900;
+    constexpr static const float kHeight = 20;
+    constexpr static const float kLength = 80;
+    constexpr static const int kWindowSize = 900;
 };
     
 }

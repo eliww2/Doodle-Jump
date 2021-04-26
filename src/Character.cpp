@@ -10,7 +10,7 @@ Character::Character() {}
 
 void Character::Display() {
     ci::gl::color(ci::Color("green"));
-    hit_box_ = ci::Rectf (vec2(position_x_, position_y_), vec2(position_x_ + kWidth, position_y_ + kHeight));
+    hit_box_ = ci::Rectf (vec2(position_x_, position_y_), vec2(position_x_ + (float)kWidth, position_y_ + (float)kHeight));
     ci::gl::drawSolidRect(hit_box_);
     std::string current_score = "Score: " + std::to_string((int)(score / 4));
     ci::gl::drawString(current_score, vec2(10, 10), ci::Color("black"), ci::Font("arial", 24));
@@ -25,7 +25,7 @@ void Character::UpdateCharacter(std::vector<Platform>& platforms) {
                     vec2(current_platform.left_position_, current_platform.top_position_), 
                     vec2(current_platform.right_position_, current_platform.bottom_position_)
             );
-            if (hit_box_.intersects(check) && (position_y_ + kHeight) <= current_platform.bottom_position_) {
+            if (hit_box_.intersects(check) && (position_y_ + (float)kHeight) <= current_platform.bottom_position_) {
                 velocity_[1] = (float)kJumpHeight;
                 break;
             }
@@ -57,10 +57,10 @@ void Character::UpdateCharacter(std::vector<Platform>& platforms) {
     }
     
     // deals with player wrapping the screen.
-    if (position_x_ + kWidth < 0) {
+    if (position_x_ + (float)kWidth < 0) {
         position_x_ = kScreenSize;
     } else if (position_x_ > kScreenSize) {
-        position_x_ = 0 - kWidth;
+        position_x_ = 0 - (float)kWidth;
     }
 
     height_up_ += velocity_[1];
@@ -81,6 +81,10 @@ void Character::ChangeHorizontalVel(float change) {
         }
         velocity_[0] += change + 1;
     }
+}
+
+float Character::getScore() {
+    return score;
 }
 
 }

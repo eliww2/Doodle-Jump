@@ -43,6 +43,8 @@ public:
      */
     void ChangeHorizontalVel(float change);
     
+    float getScore();
+    
 private:
     
     /**
@@ -58,12 +60,12 @@ private:
     /**
      * Basic const variables for game play.
      */
-    const float kHeight = 70;
-    const float kWidth = 50;   
-    const double kJumpHeight = 17;
-    const float kAcceleration = -.4f;
-    const float kAirResistance = .2f;
-    const float kScreenSize = 900;
+    constexpr static const float kHeight = 70;
+    constexpr static const float kWidth = 50;   
+    constexpr static const double kJumpHeight = 17;
+    constexpr static const float kAcceleration = -.4f;
+    constexpr static const float kAirResistance = .2f;
+    constexpr static const float kScreenSize = 900;
 };    
 }  // namespace doodleJump
 #endif //FINAL_PROJECT_CHARACTER_H
