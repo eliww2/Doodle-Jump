@@ -44,6 +44,7 @@ public:
 private:
     Character character_;
     std::vector<Platform> platforms_;
+    const int kWindowSize = 900;
 };    
     
 }

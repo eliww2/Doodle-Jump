@@ -15,12 +15,15 @@ GameRound::GameRound() {
 void GameRound::Display() {
     character_.Display();
     for (Platform current_platform : platforms_) {
-            current_platform.Display();
+        current_platform.Display();
     }
 }
 
 void GameRound::UpdateGame() {
     character_.UpdateCharacter(platforms_);
+    for (Platform& platform : platforms_) {
+        platform.UpdatePlatform();
+    }
 }
 
 void GameRound::KeyInput(const std::string& event) {

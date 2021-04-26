@@ -20,13 +20,14 @@ This will be a 3 week project and here is the goals I would like to accomplish e
 
 ####Week 1:
 
-Implement character_ and platforms that randomly spawn a specified amount. 
-Add acceleration and velocity to character_.
+Implement character and platforms that randomly spawn a specified amount. 
+Add acceleration and velocity to character. Implement physics and collision logic. 
 
 ####Week 2:
 
-Implement physics engine and collision logic for the platforms and character_.
-Add a score keeper and a highscore keeper.
+When the character exits the screen in one direction he comes out the other side of the screen.
+Create flow of game and get player to go up and more platforms to spawn.
+Add a score_ keeper and a highscore keeper.
 
 ####Week 3:
 

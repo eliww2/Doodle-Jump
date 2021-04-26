@@ -35,7 +35,9 @@ public:
      * Displays the platform on the screen.
      * Currently has default black color but will have sprite in future.
      */
-    void Display() const;
+    void Display();
+    
+    void UpdatePlatform();
     
     /**
      * Basic positions for the platform.
@@ -45,10 +47,11 @@ public:
     float bottom_position_;
     float right_position_;
     ci::Rectf platform_box_;
-
+    
 private:
     const float kHeight = 20;
     const float kLength = 80;
+    const int kWindowSize = 900;
 };
     
 }

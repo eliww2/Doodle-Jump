@@ -14,6 +14,7 @@ void DoodleJumpApp::draw() {
     ci::Color background_color("white");
     ci::gl::clear(background_color);
     current_game_.Display();
+    glm::vec3 vec3;
 }
 
 void DoodleJumpApp::update() {
