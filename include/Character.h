@@ -43,6 +43,10 @@ public:
      */
     void ChangeHorizontalVel(float change);
     
+    /**
+     * Returns player score
+     * @return score.
+     */
     float getScore();
     
 private:

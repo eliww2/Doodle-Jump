@@ -28,6 +28,7 @@ Add acceleration and velocity to character. Implement physics and collision logi
 When the character exits the screen in one direction he comes out the other side of the screen.
 Create flow of game and get player to go up and more platforms to spawn.
 Add a score_ keeper and a highscore keeper.
+Added game over screen and allows to play more games.
 
 ####Week 3:
 

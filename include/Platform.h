@@ -26,17 +26,14 @@ public:
     Platform();
     
     /**
-     * Creates platform of random x position, but is passed the height that it will spawn at.
-     * @param height at what position the height the platform should spawn.
-     */
-    explicit Platform(const float height);
-    
-    /**
      * Displays the platform on the screen.
      * Currently has default black color but will have sprite in future.
      */
     void Display();
     
+    /**
+     * Updates the position of the platform.
+     */
     void UpdatePlatform();
     
     /**
