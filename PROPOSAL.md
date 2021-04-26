@@ -5,7 +5,7 @@ I will be using Cinder to help implement/play this game and probably some additi
 
 ## Details:
 
-My game will have a character that starts on the bottom and starts with an initial velocity.
+My game will have a character_ that starts on the bottom and starts with an initial velocity.
 He will start falling and must keep hopping on each randomly placed platform to keep from falling off the screen.
 There will be no winning, however a highscore will be kept track of.
 
@@ -20,17 +20,17 @@ This will be a 3 week project and here is the goals I would like to accomplish e
 
 ####Week 1:
 
-Implement character and platforms that randomly spawn a specified amount. 
-Add acceleration and velocity to character.
+Implement character_ and platforms that randomly spawn a specified amount. 
+Add acceleration and velocity to character_.
 
 ####Week 2:
 
-Implement physics engine and collision logic for the platforms and character.
+Implement physics engine and collision logic for the platforms and character_.
 Add a score keeper and a highscore keeper.
 
 ####Week 3:
 
-Add better graphics such as background, character skin, and platform skin.
+Add better graphics such as background, character_ skin, and platform skin.
 Potentially add platforms that can only be used once.
 
 ##Extra:
