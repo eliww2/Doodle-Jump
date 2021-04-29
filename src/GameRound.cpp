@@ -13,10 +13,10 @@ GameRound::GameRound() {
 }
  
 void GameRound::Display() {
-    character_.Display();
     for (Platform current_platform : platforms_) {
         current_platform.Display();
     }
+    character_.Display();
     if (!playing_) {
         ci::gl::drawString("Press SPACEBAR to play", vec2(90, 350), ci::Color("black"), ci::Font("arial", 80));
     }

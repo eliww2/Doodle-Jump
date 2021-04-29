@@ -8,6 +8,8 @@
 #include "cinder/gl/gl.h"
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/audio/audio.h"
+#include "cinder/app/App.h"
 #include "Platform.h"
 
 using glm::vec2;

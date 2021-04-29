@@ -6,6 +6,8 @@
 #define FINAL_PROJECT_PLATFORM_H
 
 #include "cinder/gl/gl.h"
+#include <ctime>
+#include <chrono>
 #include <random>
 
 using glm::vec2;
@@ -49,8 +51,11 @@ private:
     constexpr static const float kHeight = 40;
     constexpr static const float kLength = 100;
     constexpr static const int kWindowSize = 900;
-    ci::gl::Texture2dRef platform_skin = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\platform.png)"));
-
+    ci::gl::Texture2dRef platform_skin = 
+            ci::gl::Texture2d::create(
+                    ci::loadImage(
+                            R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\platform.png)")
+    );
 };
     
 }

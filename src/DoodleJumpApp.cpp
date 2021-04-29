@@ -47,6 +47,7 @@ void DoodleJumpApp::keyDown(ci::app::KeyEvent event) {
                 current_game_ = GameRound();
             }
             current_game_.KeyInput("space");
+            break;
     }
 }
 

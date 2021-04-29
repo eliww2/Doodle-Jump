@@ -19,7 +19,6 @@ void Character::Display() {
 }
 
 void Character::UpdateCharacter(std::vector<Platform>& platforms) {
-    
     // Makes player move up the screen
     for (Platform& current_platform : platforms) {
         current_platform.bottom_position_ += velocity_[1];
@@ -29,7 +28,7 @@ void Character::UpdateCharacter(std::vector<Platform>& platforms) {
     // checks if the character is coming down on a platform and makes it bounce 
     if (velocity_[1] <= 0) {
         for (Platform& current_platform : platforms) {
-            auto check = ci::Rectf(
+            auto platform_box = ci::Rectf(
                     vec2(current_platform.left_position_, current_platform.top_position_), 
                     vec2(current_platform.right_position_, current_platform.bottom_position_)
             );
@@ -39,7 +38,7 @@ void Character::UpdateCharacter(std::vector<Platform>& platforms) {
             } else {
                 checker = ci::Rectf(vec2(position_x_, position_y_), vec2((position_x_ + 60), position_y_ + (float)kHeight));
             }
-            if (checker.intersects(check) && (position_y_ + (float)kHeight) <= current_platform.bottom_position_) {
+            if (checker.intersects(platform_box) && (position_y_ + (float)kHeight) <= current_platform.bottom_position_) {
                 velocity_[1] = (float)kJumpHeight;
                 break;
             }
