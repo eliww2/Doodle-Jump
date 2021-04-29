@@ -48,6 +48,7 @@ private:
     std::vector<Platform> platforms_;
     constexpr static const int kWindowSize = 900;
     bool playing_ = false;
+    int platform_count = 10;
 };    
     
 }

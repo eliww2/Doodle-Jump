@@ -46,10 +46,15 @@ public:
     void ChangeHorizontalVel(float change);
     
     /**
+     * Deals with the player going off the screen. If they do then it makes it come out the other side.
+     */
+    void PlayerWrap();
+    
+    /**
      * Returns player score
      * @return score.
      */
-    float getScore();
+    float GetScore() const;
     
 private:
 
@@ -65,6 +70,7 @@ private:
     ci::Rectf hit_box_;
     float height_up_ = 0;
     float score = 0;
+    bool facing_left = true;
     
     /**
      * Basic const variables for game play.

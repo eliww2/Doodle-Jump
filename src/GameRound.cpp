@@ -7,7 +7,7 @@
 namespace doodleJump {
     
 GameRound::GameRound() {
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < platform_count; i++) {
         platforms_.emplace_back(Platform());
     }
 }
@@ -18,25 +18,29 @@ void GameRound::Display() {
         current_platform.Display();
     }
     if (!playing_) {
-        ci::gl::drawString("Press SPACEBAR to play", vec2(90, 450), ci::Color("Blue"), ci::Font("arial", 80));
+        ci::gl::drawString("Press SPACEBAR to play", vec2(90, 350), ci::Color("black"), ci::Font("arial", 80));
+    }
+    if (alive) {
+        std::string current_score = "Score: " + std::to_string((int)(character_.GetScore() / 4));
+        ci::gl::drawString(current_score, vec2(10, 10), ci::Color("black"), ci::Font("arial", 24));
     }
 }
 
 void GameRound::UpdateGame() {
+    int platforms_onscreen = -1;
     if (playing_ && alive) {
+        platforms_onscreen = 0;
         character_.UpdateCharacter(platforms_);
         for (Platform &platform : platforms_) {
             platform.UpdatePlatform();
+            if (platform.bottom_position_ > 0) {
+                platforms_onscreen++;
+            }
         }
     }
-    int platforms_onscreen = 0;
-    for (Platform current_platform : platforms_) {
-        if (current_platform.bottom_position_ > 0) {
-            platforms_onscreen++;
-        }  
-    }
+    //When the player falls this changes to Gameover screen.
     if (platforms_onscreen == 0) {
-        round_score = (int)(character_.getScore() / 4);
+        round_score = (int)(character_.GetScore() / 4);
         alive = false;
     }
 }
