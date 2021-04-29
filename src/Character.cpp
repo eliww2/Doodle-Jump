@@ -9,9 +9,8 @@ namespace doodleJump {
 Character::Character() {}
 
 void Character::Display() {
-    ci::gl::color(ci::Color("green"));
     hit_box_ = ci::Rectf (vec2(position_x_, position_y_), vec2(position_x_ + (float)kWidth, position_y_ + (float)kHeight));
-    ci::gl::drawSolidRect(hit_box_);
+    ci::gl::draw(kSkinLeft, hit_box_);
     std::string current_score = "Score: " + std::to_string((int)(score / 4));
     ci::gl::drawString(current_score, vec2(10, 10), ci::Color("black"), ci::Font("arial", 24));
 }

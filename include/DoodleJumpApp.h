@@ -38,14 +38,12 @@ public:
      */
     void keyDown(ci::app::KeyEvent event) override;
     
-    const int kWindowSize = 900;
-    const int kMargin = 100;
-
 private:
     
-    // The round being played.
+    ci::gl::Texture2dRef background_;
     GameRound current_game_;
     int highscore_ = 0;
+    const int kWindowSize = 900;
 };
     
 } //namespace doodleJump

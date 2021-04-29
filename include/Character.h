@@ -6,6 +6,8 @@
 #define FINAL_PROJECT_CHARACTER_H
 
 #include "cinder/gl/gl.h"
+#include "cinder/ImageIo.h"
+#include "cinder/gl/Texture.h"
 #include "Platform.h"
 
 using glm::vec2;
@@ -50,7 +52,10 @@ public:
     float getScore();
     
 private:
-    
+
+    ci::gl::Texture2dRef kSkinLeft = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\skin_left.png)"));
+    ci::gl::Texture2dRef kSkinRight = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\skin_right.png)"));
+
     /**
      * Set to initial player data. Updated in UpdateCharacter()
      */
@@ -64,12 +69,13 @@ private:
     /**
      * Basic const variables for game play.
      */
-    constexpr static const float kHeight = 70;
-    constexpr static const float kWidth = 50;   
+    constexpr static const float kHeight = 90;
+    constexpr static const float kWidth = 90;   
     constexpr static const double kJumpHeight = 17;
     constexpr static const float kAcceleration = -.4f;
     constexpr static const float kAirResistance = .2f;
     constexpr static const float kScreenSize = 900;
+    
 };    
 }  // namespace doodleJump
 #endif //FINAL_PROJECT_CHARACTER_H

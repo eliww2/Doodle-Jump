@@ -16,9 +16,8 @@ Platform::Platform() {
 }
 
 void Platform::Display() {
-    ci::gl::color(ci::Color("black"));
     platform_box_ = ci::Rectf (vec2(left_position_, top_position_), vec2(right_position_, bottom_position_));
-    ci::gl::drawSolidRoundedRect(platform_box_, 10, 10);
+    ci::gl::draw(platform_skin, platform_box_);
 }
 
 void Platform::UpdatePlatform() {

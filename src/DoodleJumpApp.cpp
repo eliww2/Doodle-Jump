@@ -8,11 +8,12 @@ namespace doodleJump {
 
 doodleJump::DoodleJumpApp::DoodleJumpApp() {
     ci::app::setWindowSize(kWindowSize, kWindowSize);
+    background_ = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\background.png)"));
 }
 
 void DoodleJumpApp::draw() {
-    ci::Color background_color("white");
-    ci::gl::clear(background_color);
+    ci::Rectf back(vec2(0, kWindowSize + 300), vec2(kWindowSize, 0));
+    ci::gl::draw(background_, back);
     if (current_game_.alive) {
         current_game_.Display();
     } else {
