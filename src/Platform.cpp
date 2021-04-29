@@ -8,26 +8,26 @@ namespace doodleJump {
     
     
 Platform::Platform() {
-    left_position_ = (float)(rand() % 720);
-    top_position_ = (float)(rand() % 780);
+    left_position_ = (float)(rand() % (kWindowSize - (int)kLength));
+    top_position_ = (float)(rand() % (kWindowSize - (int)kHeight));
     bottom_position_ = top_position_ + kHeight;
     right_position_ = left_position_ + kLength;
-    platform_box_ = ci::Rectf(vec2(left_position_, top_position_), vec2(right_position_, bottom_position_));
+    platform_box_ = ci::Rectf (vec2(left_position_, top_position_), vec2(right_position_, bottom_position_));
 }
 
-Platform::Platform(const float setHeight) {
-    left_position_ = (float)(rand() % 720);
-    bottom_position_ = setHeight;
-    top_position_ = bottom_position_ - kHeight;
-    right_position_ = left_position_ + kLength;
-    platform_box_ = ci::Rectf(vec2(left_position_, top_position_), vec2(right_position_, bottom_position_));
-}
-
-void Platform::Display() const {
+void Platform::Display() {
     ci::gl::color(ci::Color("black"));
+    platform_box_ = ci::Rectf (vec2(left_position_, top_position_), vec2(right_position_, bottom_position_));
     ci::gl::drawSolidRoundedRect(platform_box_, 10, 10);
 }
 
-
+void Platform::UpdatePlatform() {
+    if (top_position_ > kWindowSize) {
+        top_position_ = -kHeight;
+        bottom_position_ = top_position_ + kHeight;
+        left_position_ = (float)(rand() % (kWindowSize - (int)kLength));
+        right_position_ = left_position_ + kLength;
+    }
+}
 
 } // namespace doodleJump

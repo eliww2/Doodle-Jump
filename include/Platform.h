@@ -26,16 +26,15 @@ public:
     Platform();
     
     /**
-     * Creates platform of random x position, but is passed the height that it will spawn at.
-     * @param height at what position the height the platform should spawn.
-     */
-    explicit Platform(const float height);
-    
-    /**
      * Displays the platform on the screen.
      * Currently has default black color but will have sprite in future.
      */
-    void Display() const;
+    void Display();
+    
+    /**
+     * Updates the position of the platform.
+     */
+    void UpdatePlatform();
     
     /**
      * Basic positions for the platform.
@@ -45,10 +44,11 @@ public:
     float bottom_position_;
     float right_position_;
     ci::Rectf platform_box_;
-
+    
 private:
-    const float kHeight = 20;
-    const float kLength = 80;
+    constexpr static const float kHeight = 20;
+    constexpr static const float kLength = 80;
+    constexpr static const int kWindowSize = 900;
 };
     
 }

@@ -40,10 +40,14 @@ public:
      * @param event - Key pressed.
      */
     void KeyInput(const std::string& event);
-
+    
+    bool alive = true;
+    int round_score = 0;
 private:
     Character character_;
     std::vector<Platform> platforms_;
+    constexpr static const int kWindowSize = 900;
+    bool playing_ = false;
 };    
     
 }
