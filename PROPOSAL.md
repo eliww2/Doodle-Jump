@@ -33,7 +33,7 @@ Added game over screen and allows to play more games. (Fully playable game)
 ####Week 3:
 
 Add better graphics such as background, character_ skin, and platform skin.
-Add sound for jumping.
+Clean up graphics and add a pause screen. Also add game over screen.
 
 ##Extra:
 
