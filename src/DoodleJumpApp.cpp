@@ -8,7 +8,7 @@ namespace doodleJump {
 
 doodleJump::DoodleJumpApp::DoodleJumpApp() {
     ci::app::setWindowSize(kWindowSize, kWindowSize);
-    background_ = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\background.png)"));
+    background_ = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\assets\background.png)"));
 }
 
 void DoodleJumpApp::draw() {
@@ -34,7 +34,7 @@ void DoodleJumpApp::update() {
     }
 }
 
-void DoodleJumpApp::keyDown(ci::app::KeyEvent event) {
+void DoodleJumpApp::keyDown(ci::app::KeyEvent event) { 
     switch (event.getCode()) {
         case ci::app::KeyEvent::KEY_LEFT:
             current_game_.KeyInput("left");

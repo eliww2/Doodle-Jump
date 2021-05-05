@@ -54,7 +54,7 @@ private:
     ci::gl::Texture2dRef platform_skin = 
             ci::gl::Texture2d::create(
                     ci::loadImage(
-                            R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\platform.png)")
+                            R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\assets\platform.png)")
     );
 };
     

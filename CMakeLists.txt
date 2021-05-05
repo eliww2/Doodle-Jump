@@ -51,7 +51,7 @@ include("${CINDER_PATH}/proj/cmake/modules/cinderMakeApp.cmake")
 
 list(APPEND SOURCE_FILES    src/DoodleJumpApp.cpp src/Character.cpp src/Platform.cpp src/GameRound.cpp)
 
-list(APPEND TEST_FILES )
+list(APPEND TEST_FILES tests/object_tests.cpp)
 
 ci_make_app(
 APP_NAME        play-game

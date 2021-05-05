@@ -52,23 +52,29 @@ public:
      */
     void PlayerWrap();
     
+    bool CheckCollision(const Platform& current_platform) const;
+    
+    void UpdateScore();
+    
     /**
      * Returns player score
      * @return score.
      */
     float GetScore() const;
-    
+
+    //public for testing.
+    vec2 velocity_ = vec2(0, 15);
+
 private:
 
-    ci::gl::Texture2dRef kSkinLeft = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\skin_left.png)"));
-    ci::gl::Texture2dRef kSkinRight = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\Sprites\skin_right.png)"));
+    ci::gl::Texture2dRef kSkinLeft = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\assets\skin_left.png)"));
+    ci::gl::Texture2dRef kSkinRight = ci::gl::Texture2d::create(ci::loadImage(R"(C:\Users\eliww\Downloads\Cinder\my_projects\final-project\assets\skin_right.png)"));
 
     /**
      * Set to initial player data. Updated in UpdateCharacter()
      */
     float position_x_ = 450;
     float position_y_ = 415;
-    vec2 velocity_ = vec2(0, 15);
     ci::Rectf hit_box_;
     float height_up_ = 0;
     float score = 0;
