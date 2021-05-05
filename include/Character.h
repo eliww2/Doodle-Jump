@@ -52,8 +52,16 @@ public:
      */
     void PlayerWrap();
     
+    /**
+     * Checks to see if the current platform collides.
+     * @param current_platform One of the platforms on the screen.
+     * @return boolean 
+     */
     bool CheckCollision(const Platform& current_platform) const;
     
+    /**
+     * Updates the current score.
+     */
     void UpdateScore();
     
     /**
